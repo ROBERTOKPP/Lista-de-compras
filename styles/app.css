@@ -1,0 +1,41 @@
+header {
+  text-align: center;
+  padding-block: 1.5rem;
+  margin-bottom: 3rem;
+}
+h1 {
+  margin-block: 1rem 2.5rem;
+}
+
+#add-iten {
+  display: flex;
+  gap: 1rem;
+  input[type="text"] {
+    width: 100%;
+    border: 2px solid var(--border-primary);
+    border-radius: 0.75rem;
+    padding: 11px 18px;
+    font: var(--paragraph);
+    color: var(--content-tertiary);
+    &:hover{
+      border: 2px solid var(--border-hover);
+    }
+    &:focus{
+      border: 2px solid var(--always-white);
+      outline: 2px solid var(--color-brand);
+    }
+  }
+}
+button {
+  border-radius: 0.75rem;
+  padding: .75rem 1.5rem ;
+  background-color: var(--color-brand);
+  border: none;
+  font: var(--label);
+  color: var(--always-white);
+  width: 35%;
+  &:hover{
+    background-color: var(--color-brand-hover);
+  }
+  
+}
