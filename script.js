@@ -16,7 +16,7 @@ function newtasks() {
     newLi += `
      <li>
           <div>
-            <input type="checkbox" class="teste" />
+            <input type="checkbox" class="check-${position}" />
             <p>${tasks}</p>
           </div>
             <img src="assets/icons/Frame-3.svg" alt="" onclick="deleteItem(${position})">
@@ -28,8 +28,22 @@ function newtasks() {
 }
 
 function deleteItem(position) {
-  list.splice(position, 1)
-  newtasks()
+  const checkbox = document.querySelector(`.check-${position}`);
+  const msAlert = document.getElementById("teste");
+  if (checkbox.checked) {
+    list.splice(position, 1);
+    itemAlert = `
+        <div id="alert">
+          <div>
+            <img src="assets/icons/warning-circle-filled.svg" alt="" />
+            <span>O item foi removido da lista</span>
+          </div>
+          <img src="assets/icons/delete-small.svg" alt="" />
+        </div>
+    `;
+    msAlert.innerHTML = itemAlert;
+    newtasks();
+  }
 }
 
 btn.addEventListener("click", addItemList);
